@@ -1,0 +1,39 @@
+helloWorld : '{IO, Exception} ()
+helloWorld = do
+  use Text ++
+  name = !readLine
+  printLine ("Hello " ++ name)
+
+glance.double : Nat -> Nat
+glance.double x =
+    use Nat *
+    x * 2
+
+greet : Text -> Text
+greet name = 
+    use Text ++
+    "Hi " ++ name
+
+delayGreet : 'Text
+delayGreet = '(greet "Joy")
+
+
+markOdds : [a] -> [(a, Boolean)]
+markOdds input =
+  mkOddsHelper : ([a], [(a, Boolean)]) -> ([a], [(a, Boolean)] 
+  mkOddsHelper (input, acc) = 
+
+removeEveryOther : [a] -> [a]
+removeEveryOther as = let
+
+  removeMaybe : [a] -> [Optional a] -> Boolean -> ([a], [Optional a])
+  removeMaybe todo done flag =  match todo with
+    [] -> ([], done)
+    a ++ rest if flag => removeMaybe rest ()
+  
+
+
+> double 2
+test> test1 = check(removeEveryOther ["a","b","c","d","e"] === ["a", "c", "e"])
+test> test2 = check(removeEveryOther [1] === [1])
+test> test3 = check(removeEveryOther [] === [])
